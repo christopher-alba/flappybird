@@ -19,3 +19,12 @@ export const generatePipes = () => {
     lowerPipe.remove();
   }, 5500);
 };
+
+export const clearAllPipes = () => {
+  let pipes = document.getElementsByClassName("pipe");
+  pipes = [...pipes];
+  for (let i = 0; i < pipes.length; i++) {
+    pipes[i].remove();
+    console.log(pipes);
+  }
+};

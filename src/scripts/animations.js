@@ -12,10 +12,11 @@ export const jump = () => {
   if (flappyBird.getBoundingClientRect().top > 150) {
     clearGravityTimer();
     flappyBird.style.top = flappyBird.getBoundingClientRect().top - 200 + "px";
-    setTimeout(setGravityTimer, 50);
+    flappyBird = document.getElementsByClassName("flappy-bird")[0];
+    if (flappyBird) {
+      setTimeout(setGravityTimer, 50);
+    }
   }
 };
 
-export const animatePipes = () => {
-    
-}
+export const animatePipes = () => {};

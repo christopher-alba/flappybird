@@ -1,4 +1,5 @@
 import { addJumpEventListener, clearJumpEventListener } from "./controls";
+import { clearAllPipes } from "./pipes";
 import {
   clearBirdHeightDetector,
   clearGravityTimer,
@@ -29,4 +30,5 @@ export const endGame = () => {
   clearJumpEventListener();
   clearBirdHeightDetector();
   clearNewPipesTimer();
+  clearAllPipes();
 };
