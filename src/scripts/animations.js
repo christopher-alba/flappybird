@@ -15,3 +15,7 @@ export const jump = () => {
     setTimeout(setGravityTimer, 50);
   }
 };
+
+export const animatePipes = () => {
+    
+}

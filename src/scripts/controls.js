@@ -4,7 +4,7 @@ let spaceOn = false;
 
 export const addJumpEventListener = () => {
   document.addEventListener("keypress", onSpacebarPress);
-  document.addEventListener("keyup", onSpacebarRelease);
+  document.addEventListener("keyup", onSpacebarRelease);   
 };
 export const clearJumpEventListener = () => {
   document.removeEventListener("keypress", onSpacebarPress);

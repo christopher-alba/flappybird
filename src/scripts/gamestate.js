@@ -1,5 +1,12 @@
 import { addJumpEventListener, clearJumpEventListener } from "./controls";
-import { clearBirdHeightDetector, clearGravityTimer, setBirdHeightDetector, setGravityTimer } from "./timers";
+import {
+  clearBirdHeightDetector,
+  clearGravityTimer,
+  clearNewPipesTimer,
+  setBirdHeightDetector,
+  setGravityTimer,
+  setNewPipesTimer,
+} from "./timers";
 
 export const startGame = () => {
   document.getElementsByClassName("main-menu")[0].style.display = "none";
@@ -11,12 +18,15 @@ export const startGame = () => {
   setGravityTimer();
   setBirdHeightDetector();
   addJumpEventListener();
+  setNewPipesTimer();
 };
 
 export const endGame = () => {
-    console.log("testing");
   document.getElementsByClassName("main-menu")[0].style.display = "block";
+  let flappyBird = document.getElementsByClassName("flappy-bird")[0];
+  flappyBird.remove();
   clearGravityTimer();
   clearJumpEventListener();
   clearBirdHeightDetector();
+  clearNewPipesTimer();
 };
