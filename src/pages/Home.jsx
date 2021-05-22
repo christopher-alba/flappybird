@@ -7,6 +7,8 @@ const Home = () => {
       <div className="game-arena">
         <div className="main-menu">
           <h1>Flappy Bird</h1>
+          <h2>press spacebar to jump!</h2>
+          <h2>dodge the pipes to get points</h2>
           <button
             onClick={() => {
               startGame();
