@@ -2,9 +2,11 @@ import { addJumpEventListener, clearJumpEventListener } from "./controls";
 import { clearAllPipes } from "./pipes";
 import {
   clearBirdHeightDetector,
+  clearDetectCollisionTimer,
   clearGravityTimer,
   clearNewPipesTimer,
   setBirdHeightDetector,
+  setDetectCollisionTimer,
   setGravityTimer,
   setNewPipesTimer,
 } from "./timers";
@@ -20,6 +22,7 @@ export const startGame = () => {
   setBirdHeightDetector();
   addJumpEventListener();
   setNewPipesTimer();
+  setDetectCollisionTimer();
 };
 
 export const endGame = () => {
@@ -31,4 +34,5 @@ export const endGame = () => {
   clearBirdHeightDetector();
   clearNewPipesTimer();
   clearAllPipes();
+  clearDetectCollisionTimer();
 };

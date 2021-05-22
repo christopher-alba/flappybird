@@ -14,10 +14,9 @@
   transition: 50ms;
 }
 .pipe {
-  width: 50px;
-  background: green;
+  width: 100px;
   position: absolute;
-  right:0px;
+  right: 0px;
   transition: 5000ms linear;
 }
 

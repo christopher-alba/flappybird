@@ -13,6 +13,15 @@ export const generatePipes = () => {
     upperPipe.style.height.split("p")[0] -
     300 +
     "px";
+  lowerPipe.style.background = `url("./pipe.png")`;
+  upperPipe.style.background = `url("./pipeupper.png")`;
+
+  lowerPipe.style.backgroundRepeat = "no-repeat";
+  lowerPipe.style.backgroundSize = "100% 100%";
+
+  upperPipe.style.backgroundRepeat = "no-repeat";
+  upperPipe.style.backgroundSize = "100% 100%";
+
   let gameArena = document.getElementsByClassName("game-arena")[0];
   gameArena.appendChild(upperPipe);
   gameArena.appendChild(lowerPipe);
