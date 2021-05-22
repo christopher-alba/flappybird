@@ -19,7 +19,7 @@
 .pipe {
   width: 100px;
   position: absolute;
-  right: 0px;
+  right: -100px;
   transition: 5000ms linear;
 }
 
