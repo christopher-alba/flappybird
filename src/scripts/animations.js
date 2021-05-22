@@ -11,8 +11,8 @@ export const jump = () => {
   let flappyBird = document.getElementsByClassName("flappy-bird")[0];
   if (flappyBird.getBoundingClientRect().top > 150) {
     clearGravityTimer();
-    flappyBird.style.top = flappyBird.getBoundingClientRect().top - 200 + "px";
-    flappyBird = document.getElementsByClassName("flappy-bird")[0];
+    flappyBird.style.top = flappyBird.getBoundingClientRect().top - 100 + "px";
+    flappyBird = document.getElementsByClassName("flappy-bird")[0]; 
     if (flappyBird) {
       setTimeout(setGravityTimer, 50);
     }

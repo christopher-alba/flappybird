@@ -6,15 +6,14 @@
   background-size: cover;
 }
 .flappy-bird {
-  width: 150px;
-  height: 150px;
+  width: auto;
+  height: 50px;
   position: absolute;
   top: 30%;
   left: 100px;
   transition: 50ms;
 }
 .pipe {
-  height: 200px;
   width: 50px;
   background: green;
   position: absolute;

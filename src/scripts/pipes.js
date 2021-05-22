@@ -1,5 +1,4 @@
 export const generatePipes = () => {
-  console.log("testingA");
   let upperPipe = document.createElement("div");
   upperPipe.classList.add("pipe");
   upperPipe.classList.add("upper");
@@ -8,6 +7,12 @@ export const generatePipes = () => {
   lowerPipe.classList.add("pipe");
   lowerPipe.classList.add("lower");
 
+  upperPipe.style.height = 200 + Math.random() * 300 + "px";
+  lowerPipe.style.height =
+    window.visualViewport.height -
+    upperPipe.style.height.split("p")[0] -
+    300 +
+    "px";
   let gameArena = document.getElementsByClassName("game-arena")[0];
   gameArena.appendChild(upperPipe);
   gameArena.appendChild(lowerPipe);
@@ -25,6 +30,5 @@ export const clearAllPipes = () => {
   pipes = [...pipes];
   for (let i = 0; i < pipes.length; i++) {
     pipes[i].remove();
-    console.log(pipes);
   }
 };
