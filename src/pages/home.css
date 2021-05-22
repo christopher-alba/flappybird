@@ -8,4 +8,8 @@
 .flappy-bird{
     width:150px;
     height:150px;
+    position:absolute;
+    top:30%;
+    left:100px;
+    transition:50ms;
 }
