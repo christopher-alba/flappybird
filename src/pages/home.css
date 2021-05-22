@@ -4,6 +4,9 @@
   background: url("../images/flappybirdbackground.png");
   background-repeat: no-repeat;
   background-size: cover;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 .flappy-bird {
   width: auto;
@@ -32,4 +35,7 @@
   left: 45%;
   top: 100px;
   visibility: hidden;
+}
+.game-over{
+  display:none;
 }

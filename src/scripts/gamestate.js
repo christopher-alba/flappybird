@@ -30,7 +30,9 @@ export const startGame = () => {
 };
 
 export const endGame = () => {
-  document.getElementsByClassName("main-menu")[0].style.display = "block";
+  document.getElementsByClassName("game-over")[0].style.display = "block";
+  document.getElementsByClassName("final-score")[0].innerHTML =
+    "Final Score: " + score;
   document.getElementsByClassName("score")[0].style.visibility = "hidden";
   let flappyBird = document.getElementsByClassName("flappy-bird")[0];
   flappyBird.remove();
@@ -44,6 +46,11 @@ export const endGame = () => {
   score = 0;
   document.getElementsByClassName("score")[0].innerHTML = "Score: " + score;
 };
+
+export const mainMenu = () => {
+  document.getElementsByClassName("game-over")[0].style.display = "none";
+  document.getElementsByClassName("main-menu")[0].style.display = "block";
+}
 
 export const incrementScore = () => {
   score += 1;

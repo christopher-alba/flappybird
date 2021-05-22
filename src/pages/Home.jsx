@@ -1,12 +1,12 @@
 import React from "react";
-import { startGame } from "../scripts/gamestate";
+import { startGame, mainMenu } from "../scripts/gamestate";
 import "./home.css";
 const Home = () => {
   return (
     <>
       <div className="game-arena">
         <div className="main-menu">
-          <div>Flappy Bird</div>
+          <h1>Flappy Bird</h1>
           <button
             onClick={() => {
               startGame();
@@ -16,6 +16,17 @@ const Home = () => {
           </button>
         </div>
         <h1 className="score">Score: 0</h1>
+        <div className="game-over">
+          <h1>Game Over</h1>
+          <h2 className="final-score">Final Score: 0</h2>
+          <button
+            onClick={() => {
+              mainMenu();
+            }}
+          >
+            Main Menu
+          </button>
+        </div>
       </div>
     </>
   );
