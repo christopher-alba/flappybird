@@ -5,14 +5,17 @@ import {
   clearDetectCollisionTimer,
   clearGravityTimer,
   clearNewPipesTimer,
+  clearScoreTimer,
   setBirdHeightDetector,
   setDetectCollisionTimer,
   setGravityTimer,
   setNewPipesTimer,
+  setScoreTimer,
 } from "./timers";
-
+let score = 0;
 export const startGame = () => {
   document.getElementsByClassName("main-menu")[0].style.display = "none";
+  document.getElementsByClassName("score")[0].style.visibility = "visible";
   let flappybird = document.createElement("img");
   flappybird.src = "./flappybird.png";
   flappybird.classList.add("flappy-bird");
@@ -23,10 +26,12 @@ export const startGame = () => {
   addJumpEventListener();
   setNewPipesTimer();
   setDetectCollisionTimer();
+  setScoreTimer();
 };
 
 export const endGame = () => {
   document.getElementsByClassName("main-menu")[0].style.display = "block";
+  document.getElementsByClassName("score")[0].style.visibility = "hidden";
   let flappyBird = document.getElementsByClassName("flappy-bird")[0];
   flappyBird.remove();
   clearGravityTimer();
@@ -35,4 +40,12 @@ export const endGame = () => {
   clearNewPipesTimer();
   clearAllPipes();
   clearDetectCollisionTimer();
+  clearScoreTimer();
+  score = 0;
+  document.getElementsByClassName("score")[0].innerHTML = "Score: " + score;
+};
+
+export const incrementScore = () => {
+  score += 1;
+  document.getElementsByClassName("score")[0].innerHTML = "Score: " + score;
 };

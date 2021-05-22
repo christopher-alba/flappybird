@@ -4,7 +4,7 @@ export const applyGravity = () => {
   let flappyBird = document.getElementsByClassName("flappy-bird")[0];
   if (
     flappyBird &&
-    flappyBird.getBoundingClientRect().top < window.screen.height - 260
+    flappyBird.getBoundingClientRect().top < window.visualViewport.height
   ) {
     flappyBird.style.top = flappyBird.getBoundingClientRect().top + 30 + "px";
   }

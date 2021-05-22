@@ -1,11 +1,12 @@
 import { applyGravity } from "./animations";
-import { endGame } from "./gamestate";
+import { endGame, incrementScore } from "./gamestate";
 import { generatePipes } from "./pipes";
 
 let gravityTimer;
 let birdHeightTimer;
 let newPipesTimer;
 let collisionTimer;
+let scoreTimer;
 
 export const clearGravityTimer = () => {
   clearInterval(gravityTimer);
@@ -63,5 +64,26 @@ export const setDetectCollisionTimer = () => {
         endGame();
       }
     }
-  });
+  }, 100);
+};
+export const clearScoreTimer = () => {
+  clearInterval(scoreTimer);
+};
+export const setScoreTimer = () => {
+  scoreTimer = setInterval(() => {
+    let flappyBird = document.getElementsByClassName("flappy-bird")[0];
+    let pipes = document.getElementsByClassName("pipe");
+    for (let i = 0; i < pipes.length; i++) {
+      let pipe = pipes[i];
+      if (
+        pipe.getBoundingClientRect().left <
+        flappyBird.getBoundingClientRect().left && 
+        pipe.getBoundingClientRect().right <
+        flappyBird.getBoundingClientRect().right
+      ) {
+        incrementScore();
+        return;
+      }
+    }
+  },1500);
 };

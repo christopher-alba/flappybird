@@ -15,6 +15,7 @@ const Home = () => {
             Start Game
           </button>
         </div>
+        <h1 className="score">Score: 0</h1>
       </div>
     </>
   );
