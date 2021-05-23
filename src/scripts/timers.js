@@ -74,6 +74,10 @@ export const clearScoreTimer = () => {
   clearInterval(scoreTimer);
 };
 export const setScoreTimer = () => {
+  let scaleFactor = 1;
+  if(window.visualViewport.width < 800){
+    scaleFactor = 4;
+  }
   scoreTimer = setInterval(() => {
     let flappyBird = document.getElementsByClassName("flappy-bird")[0];
     let pipes = document.getElementsByClassName("pipe");
@@ -89,5 +93,5 @@ export const setScoreTimer = () => {
         return;
       }
     }
-  },1500);
+  },scaleFactor*1500*((window.visualViewport.width)/1920));
 };
