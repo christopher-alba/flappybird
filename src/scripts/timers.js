@@ -34,9 +34,13 @@ export const clearNewPipesTimer = () => {
   clearInterval(newPipesTimer);
 };
 export const setNewPipesTimer = () => {
+  let scaleFactor = 1;
+  if(window.visualViewport.width < 800){
+    scaleFactor = 4;
+  }
   newPipesTimer = setInterval(() => {
     generatePipes();
-  }, 1500);
+  }, scaleFactor*1500*((window.visualViewport.width)/1920));
 };
 export const clearDetectCollisionTimer = () => {
   clearInterval(collisionTimer);

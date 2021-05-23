@@ -21,6 +21,14 @@ export const generatePipes = () => {
 
   upperPipe.style.backgroundRepeat = "no-repeat";
   upperPipe.style.backgroundSize = "100% 100%";
+  let scaleFactor = 1;
+  if (window.visualViewport.width < 800) {
+    scaleFactor = 2;
+  }
+  upperPipe.style.transition =
+    scaleFactor * 5000 * (window.visualViewport.width / 1920) + "ms linear";
+  lowerPipe.style.transition =
+    scaleFactor * 5000 * (window.visualViewport.width / 1920) + "ms linear";
 
   let gameArena = document.getElementsByClassName("game-arena")[0];
   gameArena.appendChild(upperPipe);
