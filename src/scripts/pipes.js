@@ -6,8 +6,11 @@ export const generatePipes = () => {
   let lowerPipe = document.createElement("div");
   lowerPipe.classList.add("pipe");
   lowerPipe.classList.add("lower");
-
-  upperPipe.style.height = 200 + Math.random() * 300 + "px";
+  let initialHeight = 200;
+  if (window.visualViewport.width < 800) {
+    initialHeight = 50;
+  }
+  upperPipe.style.height = initialHeight + Math.random() * 300 + "px";
   lowerPipe.style.height =
     window.visualViewport.height -
     upperPipe.style.height.split("p")[0] -
