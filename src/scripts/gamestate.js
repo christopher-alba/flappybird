@@ -14,6 +14,7 @@ import {
 } from "./timers";
 let score = 0;
 export const startGame = () => {
+  clearGravityTimer();
   document.getElementsByClassName("main-menu")[0].style.display = "none";
   document.getElementsByClassName("score")[0].style.visibility = "visible";
   let flappybird = document.createElement("img");

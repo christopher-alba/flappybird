@@ -1,24 +1,24 @@
 import { jump } from "./animations";
 
-let spaceOn = false;
+let pressed = false;
 
 export const addJumpEventListener = () => {
-  document.addEventListener("keypress", onSpacebarPress);
-  document.addEventListener("keyup", onSpacebarRelease);   
+  document.addEventListener("mousedown", onPress);
+  document.addEventListener("mouseup", onRelease);   
 };
 export const clearJumpEventListener = () => {
-  document.removeEventListener("keypress", onSpacebarPress);
-  document.removeEventListener("keyup", onSpacebarRelease);
+  document.removeEventListener("mousedown", onPress);
+  document.removeEventListener("mouseup", onRelease);
 };
 
-const onSpacebarPress = (event) => {
-  if (event.code === "Space" && spaceOn === false) {
+const onPress = () => {
+  if (pressed === false) {
     jump();
-    spaceOn = true;
+    pressed = true;
   }
 };
-const onSpacebarRelease = (event) => {
-  if (event.code === "Space" && spaceOn === true) {
-    spaceOn = false;
+const onRelease = () => {
+  if (pressed === true) {
+    pressed = false;
   }
 };
