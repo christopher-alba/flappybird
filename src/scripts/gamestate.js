@@ -20,6 +20,9 @@ export const startGame = () => {
   let flappybird = document.createElement("img");
   flappybird.src = "./flappybird.png";
   flappybird.classList.add("flappy-bird");
+  if (window.visualViewport.width < 800) {
+    flappybird.style.left = "20px";
+  }
   let gameArena = document.getElementsByClassName("game-arena")[0];
   gameArena.appendChild(flappybird);
   setGravityTimer();
